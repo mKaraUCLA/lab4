@@ -1,0 +1,13 @@
+def randxy():
+  rangeX = (0, 50)
+  rangeY = (0, 75)
+  qty = 1
+  randPoints = []
+  i = 0
+  while i<qty:
+    x = random.randrange(*rangeX)
+    y = random.randrange(*rangeY)
+    if (x in range(0,10) and y in range(0,20)) or(x in range(40,50)and y in range(0,20)) or (x in range(9,67) and y in range(55,75)):continue
+    randPoints.append((x,y))
+    i += 1
+return [x,y]
