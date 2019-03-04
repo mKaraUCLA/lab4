@@ -1,13 +1,3 @@
-import matplotlib.pyplot as plt
-import random
-import math
-import copy
-
-show_animation = True
-
-class RRT():
-
-    def __init__(self, start, goal, obstacleList, randArea, expandDis=1.0, goalSampleRate=5, maxIter=500):
 nodelist=[[30,33],[22,16],[25,35],[51,66],[62,72]]
 obstacleList = [
         (5, 5, 1),
@@ -26,3 +16,11 @@ def __CollisionCheck(nodelist, obstacleList):
             d = math.sqrt(dx * dx + dy * dy)
             if d <=1.5*(30/2* size):#if it is less than half the diagonal of square
             #I considered a circle with radius of half the 
+            diagonal square
+                return False  # collision
+    return True  # safe
+
+if  __CollisionCheck(nodelist, obstacleList):
+    print("No Collision!!!!!!")
+else:
+    print("Collision :(((((")
